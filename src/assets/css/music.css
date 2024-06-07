@@ -1,0 +1,34 @@
+.music-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.music {
+    width: 1200px;
+    height: 200PX;
+    background-color: rgba(255, 255, 255, 0.447);
+}
+
+.music h2 {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.music ul {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px;
+    /* 让列表竖向排列 */
+}
+
+.music li {
+    margin: 5px 0;
+    width: 100px;
+    cursor: pointer;
+    /* 鼠标悬停时显示指针 */
+}
+
+.music .song-details h2 {
+    text-align: left;
+}

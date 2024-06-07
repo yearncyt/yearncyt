@@ -1,0 +1,225 @@
+/* 重置所有元素的边距、填充和盒模型 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* 钢琴容器的样式 */
+.piano {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 50px auto;
+}
+
+/*  ul 列表样式 */
+ul {
+  display: flex;
+  list-style: none;
+  /* 移除列表项的默认样式 */
+  padding: 0;
+}
+
+
+li {
+  position: relative;
+  width: 40px;
+}
+
+
+li>div {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 2px solid #666;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: inset 5px -8px 0 #eeebeb;
+  /* 内部阴影效果 */
+  background-color: #fff;
+}
+
+/* 鼠标悬停时列表项内部 div 元素的样式 */
+li>div:hover {
+  background: linear-gradient(50deg, #dad9d9, #ffffff);
+  /* 从左上到右下的50度角度 */
+}
+
+/* 列表项内部 div 元素处于活动状态时的样式 */
+li>div:active {
+  box-shadow: inset 3px -2px 0 #eeebeb;
+  /* 活动状态的内部阴影效果 */
+}
+
+
+li>span {
+  position: absolute;
+  top: 0;
+  /*  p 距离父元素顶部的偏移量 */
+  left: 100%;
+  /*  p 距离父元素左侧的偏移量，使其位于父元素的右侧 */
+  transform: translateX(-50%);
+  /* 水平居中 */
+  width: 20px;
+  height: 150px;
+  background-color: #000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: inset 5px -7px 0 #141414;
+  /* 内部阴影效果 */
+  z-index: 999;
+}
+
+/* 鼠标悬停时列表项内部 span 元素的样式 */
+li>span:hover {
+  background: linear-gradient(45deg, #4c4c4c, #444444);
+  /* 渐变背景色 */
+}
+
+li>span:active {
+  background: linear-gradient(45deg, #4c4c4c, #444444);
+  /* 渐变背景色 */
+}
+
+/* 列表项内部 span 元素处于活动状态时的样式 */
+li>span:active {
+  box-shadow: inset 3px -5px 0 #2c2c2c;
+  /* 活动状态的内部阴影效果 */
+}
+
+/* 列表项内部 p 元素上下排列样式 */
+.piano li div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 隐藏，显示按键提示 */
+.hide-text ul li div p:first-of-type {
+  display: none;
+}
+
+.hide-text-btn ul li div p:nth-of-type(2) {
+  display: none;
+}
+
+.piano-container li div p:first-of-type {
+  color: #1295db;
+}
+
+/* 按键提示按钮开关样式 */
+*::before,
+*::after {
+  content: '';
+  position: absolute;
+}
+
+/* input {
+  opacity: 0;
+} */
+
+
+.toggle {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* 按钮框 */
+label.toggle-item {
+  width: 101px;
+  background: #2e394d;
+  height: 38px;
+  display: inline-block;
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+  transform-origin: 20% center;
+  cursor: pointer;
+}
+
+
+
+/* 按钮里面的圆形样式过渡动画 */
+.checkcross .check {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #8BC34A;
+  transition: 0.4s ease;
+  top: 4px;
+  left: 4px;
+}
+
+/* 按钮里面的圆形样式的“√”和“×” */
+.checkcross .check::before,
+.checkcross .check::after {
+  height: 4px;
+  border-radius: 10px;
+  left: 0;
+  background: #fff;
+  transition: 0.4s ease;
+}
+
+.checkcross .check::before {
+  width: 20px;
+  transform: rotate(-45deg) translate(-5px, 17px);
+}
+
+.checkcross .check::after {
+  width: 10px;
+  transform: rotate(45deg) translate(16px, 10px);
+}
+
+#checkcross:checked+label .check {
+  left: 68px;
+  transform: rotate(360deg);
+  background: #c34a4a;
+}
+
+#checkcross:checked+label .check::before {
+  width: 18px;
+  transform: rotate(-45deg) translate(-5px, 15px);
+}
+
+#checkcross:checked+label .check::after {
+  width: 18px;
+  transform: rotate(45deg) translate(15px, 5px);
+}
+
+/* 圆形“√”和“×”的移动效果 */
+#checkcross2:checked+label .check {
+  left: 68px;
+  transform: rotate(360deg);
+  background: #c34a4a;
+}
+
+#checkcross2:checked+label .check::before {
+  width: 18px;
+  transform: rotate(-45deg) translate(-5px, 15px);
+}
+
+#checkcross2:checked+label .check::after {
+  width: 18px;
+  transform: rotate(45deg) translate(15px, 5px);
+}
+
+.key-tips {
+  margin: 0 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.key-tips p {
+  margin-left: 10px;
+}
+.piano-container .piano span {
+  text-indent: -9999px;
+}

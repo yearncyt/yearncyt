@@ -1,0 +1,21 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sakura {
+  position: absolute;
+  top: -50px; /* 初始位置设在屏幕之外 */
+  width: 40px; /* 设置樱花图片的宽度 */
+  height: 40px; /* 设置樱花图片的高度 */
+  animation: fall linear infinite;
+}
+
+@keyframes falling {
+  to {
+    transform: translateY(100vh); /* 樱花往下飘落至屏幕底部 */
+  }
+}
+
